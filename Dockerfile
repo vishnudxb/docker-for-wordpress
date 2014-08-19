@@ -1,4 +1,4 @@
-FROM 127.0.0.1:5001/docker:latest
+FROM 127.0.0.1:5000/docker:latest
 RUN apt-get update 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-client mysql-server apache2 libapache2-mod-php5 pwgen python-setuptools vim-tiny php5-mysql openssh-server sudo php5-ldap
 RUN easy_install supervisor
