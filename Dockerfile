@@ -1,4 +1,4 @@
-FROM 127.0.0.1:5000/docker:latest
+FROM 127.0.0.1:5001/docker:latest
 MAINTAINER Vishnu Nair <vishnu.nair66@gmail.com>
 RUN apt-get update # Mon Jan 27 11:35:22 EST 2014
 RUN apt-get -y upgrade
