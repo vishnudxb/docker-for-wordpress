@@ -1,5 +1,4 @@
 FROM 127.0.0.1:5001/docker:latest
-MAINTAINER Vishnu Nair <vishnu.nair66@gmail.com>
 RUN apt-get update 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-client mysql-server apache2 libapache2-mod-php5 pwgen python-setuptools vim-tiny php5-mysql openssh-server sudo php5-ldap
 RUN easy_install supervisor
@@ -12,7 +11,7 @@ RUN rm -rvf /var/www/
 ADD http://wordpress.org/latest.tar.gz /wordpress.tar.gz
 RUN tar xvzf /wordpress.tar.gz 
 RUN mv /wordpress /var/www/
-RUN chown -R www-data:www-data /var/www/
+RUN chown -R root:root /var/www/
 RUN chmod 755 /start.sh
 RUN chmod 755 /etc/apache2/foreground.sh
 RUN mkdir -p /var/log/supervisor/
