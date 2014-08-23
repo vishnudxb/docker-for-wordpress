@@ -3,7 +3,7 @@ FROM ubuntu:latest
 RUN apt-get update 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-client mysql-server apache2 libapache2-mod-php5 pwgen python-setuptools vim-tiny php5-mysql openssh-server sudo php5-ldap
 RUN easy_install supervisor
-ADD ./scripts/start.sh /start.sh
+ADD ./scripts/vishnu.sh /vishnu.sh
 ADD ./scripts/foreground.sh /etc/apache2/foreground.sh
 ADD ./configs/supervisord.conf /etc/supervisord.conf
 ADD ./configs/000-default.conf /etc/apache2/sites-available/000-default.conf
@@ -19,4 +19,4 @@ RUN mkdir -p /var/log/supervisor/
 RUN mkdir -p /var/run/sshd
 EXPOSE 80
 EXPOSE 22
-CMD ["/bin/bash", "/start.sh"]
+CMD ["/bin/bash", "/vishnu.sh"]
