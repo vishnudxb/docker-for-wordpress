@@ -1,4 +1,5 @@
 FROM ubuntu:latest
+
 RUN apt-get update 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-client mysql-server apache2 libapache2-mod-php5 pwgen python-setuptools vim-tiny php5-mysql openssh-server sudo php5-ldap
 RUN easy_install supervisor
